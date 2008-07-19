@@ -1,0 +1,22 @@
+--- data/almanah.desktop.in.old	2008-07-19 16:52:39.000000000 +0200
++++ data/almanah.desktop.in	2008-07-19 16:53:00.000000000 +0200
+@@ -3,7 +3,7 @@
+ _Comment=Keep a personal diary
+ _GenericName=Diary
+ Exec=almanah
+-Icon=diary
++Icon=almanah
+ Terminal=false
+ Type=Application
+ Categories=GTK;Utility;
+--- src/main-window.c.old	2008-07-19 16:53:20.000000000 +0200
++++ src/main-window.c	2008-07-19 16:53:37.000000000 +0200
+@@ -297,7 +297,7 @@
+ 				 * "Translator name 2 <translator2@email.address>"
+ 				 */
+ 				"translator-credits", _("translator-credits"),
+-				"logo-icon-name", "diary",
++				"logo-icon-name", "almanah",
+ 				"license", license,
+ 				"wrap-license", TRUE,
+ 				"website-label", _("Diary Website"),
