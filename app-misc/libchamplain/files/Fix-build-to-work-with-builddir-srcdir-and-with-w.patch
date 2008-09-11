@@ -1,0 +1,55 @@
+From d92797bd72ff4bd231fa0b331a9bf3ef7d56a099 Mon Sep 17 00:00:00 2001
+From: Jonathon Jongsma <jonathon.jongsma@collabora.co.uk>
+Date: Thu, 11 Sep 2008 09:47:23 -0500
+Subject: [PATCH] Fix build to work with builddir != srcdir and with with parallell make (e.g. -j3)
+
+---
+ champlain/Makefile.am |    6 +++---
+ tidy/Makefile.am      |    6 ++----
+ 2 files changed, 5 insertions(+), 7 deletions(-)
+
+diff --git a/champlain/Makefile.am b/champlain/Makefile.am
+index 080a54b..f111c05 100644
+--- a/champlain/Makefile.am
++++ b/champlain/Makefile.am
+@@ -54,10 +54,10 @@ libchamplain_1_0_la_LDFLAGS= -version-info $(LIBRARY_VERSION)
+ 
+ noinst_PROGRAMS = launcher
+ 
+-AM_CPPFLAGS = $(DEPS_CFLAGS) -DDATADIR=\""$(datadir)"\" -I../tidy 
++AM_CPPFLAGS = $(DEPS_CFLAGS) -DDATADIR=\""$(datadir)"\" -I$(top_srcdir)/tidy -I$(top_srcdir)
+ AM_LDFLAGS = $(DEPS_LIBS) -export-dynamic -export-symbols-regex ^champlain_.*
+-SOURCES = launcher.c
+-LDADD = $(DEPS_LIBS) $(top_builddir)/champlain/libchamplain-1.0.la
++launcher_SOURCES = launcher.c
++launcher_LDADD = $(DEPS_LIBS) libchamplain-1.0.la
+ 
+ svgdir = $(datadir)/champlain
+ svg_DATA = error.svg
+diff --git a/tidy/Makefile.am b/tidy/Makefile.am
+index f1bedc8..6dda7bc 100644
+--- a/tidy/Makefile.am
++++ b/tidy/Makefile.am
+@@ -69,8 +69,7 @@ tidy-marshal.c: Makefile tidy-marshal.list
+ tidy-enum-types.h: stamp-tidy-enum-types.h Makefile
+ 	@true
+ stamp-tidy-enum-types.h: $(source_h) tidy-enum-types.h.in
+-	( cd $(srcdir) && \
+-	  $(GLIB_MKENUMS) \
++	( $(GLIB_MKENUMS) \
+ 	    --template $(srcdir)/tidy-enum-types.h.in \
+ 	  $(source_h) ) >> xgen-teth && \
+ 	(cmp xgen-teth tidy-enum-types.h || cp xgen-teth tidy-enum-types.h) && \
+@@ -78,8 +77,7 @@ stamp-tidy-enum-types.h: $(source_h) tidy-enum-types.h.in
+ 	echo timestamp > $(@F)
+ 
+ tidy-enum-types.c: stamp-tidy-enum-types.h tidy-enum-types.c.in
+-	( cd $(srcdir) && \
+-	  $(GLIB_MKENUMS) \
++	( $(GLIB_MKENUMS) \
+ 	    --template $(srcdir)/tidy-enum-types.c.in \
+ 	  $(source_h) ) >> xgen-tetc && \
+ 	cp xgen-tetc tidy-enum-types.c && \
+-- 
+1.5.6.5
+

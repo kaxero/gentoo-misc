@@ -4,6 +4,10 @@
 
 EAPI=1
 
+WANT_AUTOMAKE="1.9"
+
+inherit autotools eutils
+
 MY_P="champlain"
 
 DESCRIPTION="C library aimed to provide a Gtk+ widget to display rasterized maps"
@@ -30,9 +34,19 @@ DEPEND="${RDEPEND}
 
 S=${WORKDIR}/${MY_P}-${PV}
 
+src_unpack() {
+	unpack ${A}
+	cd "${S}"
+
+	# Fix parallel build
+	epatch "${FILESDIR}/Fix-build-to-work-with-builddir-srcdir-and-with-w.patch"
+
+	eautomake
+}
+
 src_compile() {
 	econf
-	emake -j1 || die "Make failed!"
+	emake || die "Make failed!"
 }
 
 src_install() {
