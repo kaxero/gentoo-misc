@@ -20,13 +20,14 @@ RDEPEND=">=dev-libs/glib-2.16
 	crypt? ( >=app-crypt/gpgme-1.0 )"
 
 DEPEND="${RDEPEND}
-	>=dev-util/pkgconfig-0.9.0
+	>=dev-util/pkgconfig-0.20
 	>=dev-util/intltool-0.35.0
 	sys-devel/gettext"
 
 src_unpack() {
 	gnome2_src_unpack
 
+	# fix #543739
 	epatch "${FILESDIR}"/icon-rename-fix.patch
 }
 
