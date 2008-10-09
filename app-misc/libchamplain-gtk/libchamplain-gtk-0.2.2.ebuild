@@ -19,11 +19,6 @@ RDEPEND=">=x11-libs/gtk+-2.2
 DEPEND="${RDEPEND}
 	dev-util/pkgconfig"
 
-src_compile() {
-	econf
-	emake || die "Make failed!"
-}
-
 src_install() {
 	emake DESTDIR="${D}" install || die "Install failed!"
 }
