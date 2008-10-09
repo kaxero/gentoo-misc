@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-DESCRIPTION="C library aimed to provide a Gtk+ widget to display rasterized maps"
+DESCRIPTION="Clutter based world map renderer"
 HOMEPAGE="http://blog.squidy.info/projects/libchamplain/"
 SRC_URI="http://libchamplain.squidy.info/release/${PV}/${P}.tar.gz"
 
