@@ -22,11 +22,6 @@ RDEPEND=">=dev-libs/glib-2.16
 DEPEND="${RDEPEND}
 	dev-util/pkgconfig"
 
-src_compile() {
-	econf
-	emake || die "Make failed!"
-}
-
 src_install() {
 	emake DESTDIR="${D}" install || die "Install failed!"
 }
