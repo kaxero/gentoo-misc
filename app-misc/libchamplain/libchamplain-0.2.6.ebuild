@@ -16,7 +16,7 @@ RDEPEND=">=dev-libs/glib-2.16
 	>=net-libs/libsoup-2.4.1
 	>=media-libs/clutter-0.8
 	>=media-libs/clutter-cairo-0.8
-	>=x11-libs/cairo-1.6
+	>=x11-libs/cairo-1.4
 	>=net-libs/libsoup-2.4.1"
 
 DEPEND="${RDEPEND}
