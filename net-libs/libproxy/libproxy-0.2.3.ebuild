@@ -19,12 +19,13 @@ RDEPEND="gnome? ( >=gnome-base/gconf-2
 	kde? ( x11-libs/libXmu
 		x11-libs/libX11 )
 	mozilla? ( net-libs/xulrunner )
-	networkmanager? ( net-misc/networkmanager )
+	networkmanager? ( sys-apps/dbus )
 	python? ( >=dev-lang/python-2.5 )
 	webkit? ( net-libs/webkit-gtk )"
 
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig"
+	dev-util/pkgconfig
+	networkmanager? ( net-misc/networkmanager )"
 
 src_unpack() {
 	unpack ${A}
