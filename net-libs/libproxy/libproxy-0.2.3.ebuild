@@ -35,6 +35,7 @@ src_unpack() {
 
 	eautoreconf
 }
+
 src_compile() {
 	econf \
 		$(use_with gnome) \
