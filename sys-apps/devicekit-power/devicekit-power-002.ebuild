@@ -14,12 +14,12 @@ KEYWORDS="~amd64 ~x86"
 IUSE="doc"
 
 RDEPEND=">=dev-libs/glib-2.16
-		 >=sys-apps/dbus-1
-		 >=dev-libs/dbus-glib-0.76
-		 >=sys-auth/policykit-0.7
-		 >=sys-fs/udev-130
-		 >=dev-util/intltool-0.40"
+		>=sys-apps/dbus-1
+		>=dev-libs/dbus-glib-0.76
+		>=sys-auth/policykit-0.7"
+
 DEPEND="${RDEPEND}
+		>=dev-util/intltool-0.40
 		dev-libs/libxslt
 		dev-util/pkgconfig
 		app-text/docbook-xsl-stylesheets
