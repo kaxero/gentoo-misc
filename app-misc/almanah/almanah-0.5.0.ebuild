@@ -5,7 +5,7 @@
 inherit gnome2
 
 DESCRIPTION="A small GTK+ application to allow you to keep a diary of your life"
-HOMEPAGE="http://tecnocode.co.uk/projects/diary/"
+HOMEPAGE="http://tecnocode.co.uk/projects/almanah/"
 SRC_URI="http://tecnocode.co.uk/downloads/${P}.tar.gz"
 
 LICENSE="GPL-3"
