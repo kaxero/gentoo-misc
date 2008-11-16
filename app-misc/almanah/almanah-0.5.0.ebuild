@@ -17,7 +17,8 @@ RDEPEND=">=dev-libs/glib-2.16
 	>=dev-db/sqlite-3.0
 	>=gnome-base/gconf-2
 	>=x11-libs/gtk+-2.14
-	crypt? ( >=app-crypt/gpgme-1.0 )
+	crypt? ( >=app-crypt/gpgme-1.0
+		>=app-crypt/seahorse-2 )
 	spell? ( >=app-text/gtkspell-2 )"
 
 DEPEND="${RDEPEND}
