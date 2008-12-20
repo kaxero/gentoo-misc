@@ -13,7 +13,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="doc"
 
-RDEPEND=">=dev-libs/glib-2.16
+RDEPEND=">=dev-libs/glib-2.16.1
 		>=sys-apps/dbus-1
 		>=dev-libs/dbus-glib-0.76
 		>=sys-auth/policykit-0.7"
