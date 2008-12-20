@@ -20,7 +20,8 @@ RDEPEND=">=gnome-base/gconf-2
 	>=dev-python/gnome-python-2.16
 	>=dev-python/gnome-python-extras-2.14
 	>=dev-python/dbus-python-0.82
-	>=dev-python/notify-python-0.1.1"
+	>=dev-python/notify-python-0.1.1
+	epiphany? ( >=www-client/epiphany-2.14 )"
 
 DEPEND="${RDEPEND}
 	>=dev-util/pkgconfig-0.9.0
