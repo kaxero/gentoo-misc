@@ -16,6 +16,7 @@ IUSE="doc"
 RDEPEND=">=dev-libs/glib-2.16.1
 		>=sys-apps/dbus-1
 		>=dev-libs/dbus-glib-0.76
+		>=sys-apps/devicekit-002
 		>=sys-auth/policykit-0.7"
 
 DEPEND="${RDEPEND}
